@@ -4,6 +4,7 @@
 
 1. Masuk ke folder `node-backend`
 2. Buat file `.env` dan isi dengan variabel berikut:
+```
 PORT=3000
 DB_HOST=
 DB_USER=
@@ -11,6 +12,7 @@ DB_PASSWORD=
 DB_NAME=
 DB_PORT=3306
 JWT_SECRET=
+```
 
 3. Jalankan Docker:
 4. 
