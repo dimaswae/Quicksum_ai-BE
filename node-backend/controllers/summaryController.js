@@ -14,7 +14,7 @@ exports.createSummary = async (req, res) => {
     const startTime = Date.now();
 
     const { text_origin, id_model } = req.body;
-    const id_user = req.user.id_user; // Didapatkan dari authMiddleware nantinya
+    const id_user = req.user.id_user; 
 
     if (!text_origin || !id_model) {
       return res.status(400).json({ status: 'error', message: 'Teks dan ID Model wajib diisi.' });

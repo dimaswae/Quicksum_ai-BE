@@ -9,12 +9,12 @@ const db = require('./models/Index');
 const app = express();
 
 
-// 2. MIDDLEWARE 
+// MIDDLEWARE 
 app.use(cors());
-app.use(express.json()); // Berfungsi menerjemahkan request body berformat JSON
+app.use(express.json()); 
 app.use(express.urlencoded({ extended: true }));
 
-// 3. ROUTES
+// ROUTES
 const routes = require('./routes'); 
 app.use('/api', routes);
 
@@ -23,12 +23,12 @@ app.get('/', (req, res) => {
   res.json({ message: "Welcome to AI Summary Backend API!" });
 });
 
-// 4. GLOBAL ERROR HANDLER
+// GLOBAL ERROR HANDLER
 // Menangkap semua error agar server tidak crash
 const errorMiddleware = require('./middlewares/errorMiddleware');
 app.use(errorMiddleware);
 
-// 5. DATABASE SYNC & START SERVER
+// DATABASE SYNC & START SERVER
 db.sequelize.authenticate()
   .then(() => {
     console.log('✅ Koneksi ke database MySQL berhasil!');
@@ -38,7 +38,7 @@ db.sequelize.authenticate()
   .then(async () => {
     console.log('✅ Semua tabel berhasil disinkronisasi!');
     
-// --- TAMBAHAN BARU: OTOMATIS MENGISI DATA MODEL AI ---
+// OTOMATIS MENGISI DATA MODEL AI 
     const modelCount = await db.AI_Model.count();
     if (modelCount === 0) {
       await db.AI_Model.bulkCreate([

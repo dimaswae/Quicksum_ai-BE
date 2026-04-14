@@ -9,13 +9,13 @@ const Text = sequelize.define('Text', {
   },
   id_user: {
     type: DataTypes.INTEGER,
-    allowNull: false, // Tidak boleh kosong, setiap teks harus ada pemiliknya
+    allowNull: false, 
     references: {
-      model: 'users', // Merujuk pada nama tabel di database (biasanya jamak)
-      key: 'id_user'  // Sesuaikan dengan Primary Key di model User kamu
+      model: 'users', 
+      key: 'id_user'  
     },
     onUpdate: 'CASCADE',
-    onDelete: 'CASCADE' // Jika user dihapus, teks miliknya ikut terhapus
+    onDelete: 'CASCADE' 
   },
   text_origin: {
     type: DataTypes.TEXT,

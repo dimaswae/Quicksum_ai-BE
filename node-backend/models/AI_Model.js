@@ -21,7 +21,7 @@ const AI_Model = sequelize.define('AI_Model', {
   }
 }, {
   tableName: 'models',
-  timestamps: false // Di ERD kamu tidak ada create_at untuk tabel ini
+  timestamps: false 
 });
 
 module.exports = AI_Model;

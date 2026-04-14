@@ -23,7 +23,7 @@ const History = sequelize.define('History', {
       key: 'id_summary'
     }
   },
-    id_text: { // Foreign Key ke tabel texts
+    id_text: { 
     type: DataTypes.INTEGER,
     allowNull: false,
     references: {
@@ -31,7 +31,7 @@ const History = sequelize.define('History', {
       key: 'id_text'
     }
   },
-  id_model: { // Foreign Key ke tabel models
+  id_model: { 
     type: DataTypes.INTEGER,
     allowNull: false,
     references: {

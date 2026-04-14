@@ -14,9 +14,9 @@ const User = sequelize.define('User', {
   email: {
     type: DataTypes.STRING,
     allowNull: false,
-    unique: true, // Mencegah email yang sama didaftarkan 2x
+    unique: true, 
     validate: {
-      isEmail: true // Validasi otomatis agar formatnya benar-benar email
+      isEmail: true 
     }
   },
   password: {
@@ -25,8 +25,8 @@ const User = sequelize.define('User', {
   }
 }, {
   tableName: 'users',
-  timestamps: true, // Mengaktifkan fitur waktu otomatis
-  createdAt: 'create_at', // Menyesuaikan nama kolom dengan ERD kamu
+  timestamps: true, 
+  createdAt: 'create_at', 
   updatedAt: false 
 });
 
