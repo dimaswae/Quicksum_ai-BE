@@ -17,7 +17,7 @@ def summarize_text(text: str) -> str:
         ]
     }
 
-    response = requests.post(BASE_URL, headers=headers, json=data, timeout=10)
+    response = requests.post(BASE_URL, headers=headers, json=data, timeout=60)
 
     if response.status_code != 200:
         raise Exception(response.text)
