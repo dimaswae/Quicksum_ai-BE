@@ -3,4 +3,8 @@ from app.routes import summarize
 
 app = FastAPI()
 
-app.include_router(summarize.router, prefix="/api")
+app.include_router(summarize.router)
+
+@app.get("/")
+def check():
+  return {"status": "AI Server is running"}
